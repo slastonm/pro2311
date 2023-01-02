@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sendSuccsesLetter(userName){
+            console.log(`Congrat ${userName} you win`);
+        }
+        function sendFailLetter(userName){
+            console.log(`Sorry ${userName} you lose`);
+        }
+        let group2310Score = [
+            // {
+            //     name:'Tom',
+            //     score:4
+            // },
+            // {
+            //     name:'Bob',
+            //     score:3
+            // },
+        ];
+        let group2410Score = [];
+
+        function notification(scoreArr, succesCalbackFn, failCalbackFn){
+            let arr = [];
+            for(let i=0; i<scoreArr.length; i++){
+                if(scoreArr[i].score<4){
+                    failCalbackFn(scoreArr[i].name);
+                }
+                if(scoreArr[i].score>4){
+                    succesCalbackFn(scoreArr[i].name);
+                }
+            }
+        }
+        notification(group2310Score, sendSuccsesLetter, sendFailLetter);
+        notification(group2410Score, sendSuccsesLetter, sendFailLetter);
+
+        function CreateCar(model, year){
+            id = 
+            this.model = model
+            this.year = year
+        }
+        // CreateCar.info = function(){
+        //     console.log("Info inside");
+        // }
+        // CreateCar.prototype.info = function(){
+        //     console.log("Info");
+        // }
+
+        let ford = new CreateCar('Focus');
+        
+        let newFocus = new CreateCar('Focus', 1999);
+
+        let carArr = [
+            ford, newFocus
+        ]
+        console.log(carArr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
