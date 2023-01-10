@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+
+    </header>
+    <header>
+
+    </header>
+    <script>
+        let globalArr = [0,9,8];
+
+        function plusOne(){
+            console.log(111);
+        }
+        function getArr(array, plus){
+            let returnValue = [];
+            plus();
+            return returnValue;
+        }
+        let sortArr = [7];
+
+        console.log(getArr([1], plusOne));
+        // console.log(getArr([3]), plusOne);
+        // console.log(getArr(sortArr, plusOne));
+
+        // let a = 1;
+        // let b = 2;
+
+
+        // function sum(a=0,b=0,c=0,d=0){
+        //     let [...args] = arguments;
+        //     let [firs, second, third, forth] = args;
+        //     console.log(arguments);
+        //     return firs+second+third+forth;
+        // }
+        // console.log(sum(1,2));
+
+        // function divide(){
+        //     return a/b;
+        // }
+        let [...headers] = document.querySelectorAll('header');
+        console.log(headers, 'headers');
+        headers[0].innerHtml = `<div>1111</div>`;
+
+
+    </script>
+</body>
+</html>
