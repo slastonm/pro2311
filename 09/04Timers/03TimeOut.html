@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = ()=>{
+            let myInterval = setInterval(function(){
+                let date = new Date();
+                document.querySelector('p').innerText = date.toLocaleTimeString();
+            }, 1000);
+            function myIntervalStop(){
+                clearInterval(myInterval);
+            }
+            document.querySelector('button').onclick = myIntervalStop;
+        }
+    </script>
+</head>
+<body>
+    <p>
+        Cancel timer
+    </p>
+    <button>
+        Cancel
+    </button>
+</body>
+</html>
