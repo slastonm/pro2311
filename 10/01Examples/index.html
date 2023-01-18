@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="event.js"></script>
+    <style>
+        .mouse-event{
+            display: flex;
+            justify-content: space-between;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .mouse-event>div{
+            padding: 30px;
+            width: 300px;
+            height: 250px;
+            border: 2px solid red;
+        }
+        .mouse,
+        .hover{
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            margin-bottom: 30px;
+        }
+        .output{
+            font-size: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Header text
+    </header>
+    <div class="mouse">
+        Mouse
+    </div>
+    <div class="hover">
+        Hover
+    </div>
+    <p class="output">
+
+    </p>
+    <div class="mouse-event">
+        <div class="onmousemove"></div>
+        <div class="onmousedown"></div>
+        <div class="onmuseup"></div>
+    </div>
+    <p class="output">
+
+    </p>
+</body>
+</html>

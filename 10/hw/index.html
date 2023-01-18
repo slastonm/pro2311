@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+           let container = document.querySelector('.container');
+           function createEl(){
+                let todoItem = prompt('what to do?');
+                let item = document.createElement('div');
+                let date = new Date();
+                item.innerText = `${todoItem} and time:${date}`
+                container.appendChild(item);
+           }
+           for(let i=0; i<6; i++){
+                createEl();
+           }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    1) Створити сторінку на якій виводиться  вікно в яке юзер вводить дані.
+    Дані виводяться в стилізований список,  можете підключити bootstrap чи написати свої стилі. При введені більше 5 пунктів, перший пункт видаляється. В пункті який добавляється повино бути данні які введено і час створення в форматі день, номер місяця, рік і час години хвилини.
+    <div class="container">
+
+    </div>
+</body>
+</html>
