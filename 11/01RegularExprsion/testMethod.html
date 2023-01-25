@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let patern = /\d\d\d/g;
+        let inputValue = "Hello world";
+        if (patern.test(inputValue)){
+            console.log('Test result true');
+        }
+        else{
+            console.log("Test result false");
+        }
+
+        if(patern.exec(inputValue)){
+            console.log('Test result true');
+        }
+        else{
+            console.log(`Exec result ${patern.exec(inputValue)}`);
+        }
+
+        console.log(patern.exec('321 fff, 123'), "Exec global");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

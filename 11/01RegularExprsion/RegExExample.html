@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let strTest = 'scss';
+        console.log(`${/^c/.test(strTest)} c on start`);
+        console.log(`${/ss$/.test(strTest)} SS on end`);
+
+        let time = "20:05";
+        console.log(`${/^\d{1,2}:\d\d$/.test(time)} is time`);
+
+        console.log('I know JS! is js and Javascript'.match(/\bJS\b/g));
+
+        let animals = "How Cats and rats and bats";
+        let reAnimal = /[cbr]ats/gi;
+        let animalsResult = animals.match(reAnimal);
+        console.log(animalsResult);
+
+        let phoneNumber = "+38 (066) 223-23-23";
+        let phonePatern = /\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}/;
+        console.log(phonePatern.test(phoneNumber), 'Phone');
+
+        let email = "ivan.ivanov@example.com";
+        let emailPatern = /\b[a-z0-9]+@[a-z0-0.-]+\.[a-z]{2,4}\b/i;
+        console.log(emailPatern.test(email), 'Email is valid');
+
+        // let fileName = 'hello.html';
+        let fileName = 'w.html';
+
+        let filePatern = /\w+\.html/;
+        console.log(filePatern.test(fileName), 'html file');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let text = "123 Hello345 6a7 42 test value 321 example";
+        let paternReg = /\d\d\d/;
+        // let firstMatch = text.search(paternReg);
+        // document.write(`Find numbers ${firstMatch}`);
+        let globalPatern = /\d\d\d/g;
+        
+        let changedText = text.replace(globalPatern, '!!!');
+        // document.write(changedText);
+
+        let simpleText = "Text 123 and 567  and  000";
+        // let matchRes = simpleText.match(/\d\d\d/);
+        let matchRes = simpleText.match(/\d\d\d/g);
+
+        document.write(`Match result ${matchRes}`);
+        console.log(matchRes);
+
+        let operationText = "5 + 7 = 10"
+        let operationNumbers = operationText.match(/\d/g);
+        console.log(operationNumbers);
+
+        let strOk = "Are you Ok? Yes I'm OK";
+        let strRes = strOk.match(/Ok/gi);
+        console.log(`Ok result ${strRes}`);
+
+        let fineRes = strOk.replace(/OK/gi, 'fine');
+        console.log(fineRes);
+
+        let splitText = "testA-123   testB-456 testC-789"
+        let splitSymbol = splitText.split('-');
+        let splitSpace = splitText.split(' ');
+        console.log(splitSymbol, '-----');
+        console.log(splitSpace);
+        let splitReg = splitText.split(/\d\d\d/g);
+        console.log(splitReg);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
