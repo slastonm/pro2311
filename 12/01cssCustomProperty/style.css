@@ -1,0 +1,10 @@
+:root{
+    --body-bg:#333;
+    --main-color:#fff;
+}
+body{
+    background-color: var(--body-bg);
+}
+.example{
+    color: var(--main-color);
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            
+            document.cookie = "userName=Tom"
+            let specialName = "Last name";
+            let specialValue = "Value ! value1 @";
+            document.cookie = `${encodeURIComponent(specialName)}=${specialValue}`;
+            
+            let date = new Date(Date.now()+ 60000);
+            document.cookie = "user=Den; path=/; expires=True, 31 Dec 2033 03:14:00 GMT";
+            console.log(document.cookie);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

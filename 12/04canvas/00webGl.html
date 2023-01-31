@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            const canvas = document.querySelector("#gl");
+            const gl = canvas.getContext("webgl");
+            if( gl == null){
+                alert('Some wrong with canvas');
+                return;
+            }
+            gl.clearColor(255, 0, 300, 0.5);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        }
+    </script>
+</head>
+<body>
+    <canvas id="gl" width="640" height="480"></canvas>
+</body>
+</html>

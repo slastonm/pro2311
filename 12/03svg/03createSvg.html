@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            function createRect(width, height){
+                let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.setAttribute('style', 'border: 1px solid black');
+                svg.setAttribute('width', width);
+                svg.setAttribute('height', height);
+                document.body.appendChild(svg);
+
+            }
+            createRect(200, 100);
+            function createLine(width, height){
+                let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.setAttribute('style', 'border: 1px solid red');
+                svg.setAttribute('width', width);
+                svg.setAttribute('height', height);
+                let line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                line.setAttribute('x1', '0');
+                line.setAttribute('y1', '0');
+                line.setAttribute('x2', '200');
+                line.setAttribute('y2', '200');
+                line.setAttribute('stroke-width', '2');
+                line.setAttribute('stroke', 'green');
+                svg.appendChild(line);
+                document.body.appendChild(svg);
+            }
+            createLine(200, 200);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
