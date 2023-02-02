@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let xhr = new XMLHttpRequest();
+        let formDat = JSON.stringify({
+            title: 'fooo',
+            body:'test body',
+            userId: 11111
+        });
+        
+        xhr.open('POST', "https://jsonplaceholder.typicode.com/posts");
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.send(formDat);
+        xhr.onload = function(){
+            let response = xhr.response;
+            console.log(response);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

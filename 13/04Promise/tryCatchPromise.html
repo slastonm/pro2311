@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let getSomeWork = ()=>{
+            return 'Hello from function'
+        }
+        let tryPromise = new Promise(function(resolve, reject){
+            try{
+                console.log('Promise start work');
+                getSomeWork();
+                resolve('All fine resolve getSomeWork function work ok');
+            }
+            catch(err){
+                reject(`Error information ${err.message}`);
+            }
+        })
+        tryPromise.then(function(value){
+            console.log(`Resolve ${value}`);
+        }).catch(function(error){
+            console.log(`Promise ${error}`);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

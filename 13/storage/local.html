@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let container = document.querySelector('p');
+            let read = document.querySelector('.read');
+            let write = document.querySelector('.write');
+            let count = 0;
+            read.onclick = ()=>{
+                // container.innerHTML = window.localStorage.length;
+                // container.innerHTML += "<br>";
+                // container.innerHTML += window.localStorage.Key1;
+                // container.innerHTML += window.localStorage.counterKey;
+                // container.innerHTML += window.localStorage['StorageKey'];
+                window.sessionStorage.length;
+
+                container.innerHTML = `${window.sessionStorage.SesionKey} and ${window.sessionStorage[key]} and ${window.sessionStorage.example}`
+
+            }
+            write.onclick = ()=>{
+                window.sessionStorage.setItem('SesionKey', '122345');
+                window.sessionStorage.key = count++;
+                window.sessionStorage['example'] = 'test';
+                // localStorage.setItem('Key1', 'Test Value');
+                // localStorage.counterKey = count++;
+                // localStorage['StorageKey']=true;
+            }
+            // localStorage.removeItem('Key1');
+
+        }
+    </script>
+</head>
+<body>
+    <p>
+
+    </p>
+    <button class="read">
+        Read
+    </button>
+    <button class="write">
+        Write
+    </button>
+</body>
+</html>

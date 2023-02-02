@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Get get data
+        // POST create/update
+        // PUT create/update
+        // DELETE 
+        let xhr = new XMLHttpRequest();
+        xhr.open('get', "https://jsonplaceholder.typicode.com/posts", true);
+        xhr.onreadystatechange = function(){
+            console.log(xhr.status);
+            if (xhr.readyState == 4 && xhr.status == 200){
+                let result = xhr.response;
+                console.log(result);
+            }
+        }
+        xhr.responseType = 'json';
+        xhr.send(null);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

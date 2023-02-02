@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let pizzaMenu = [
+                {
+                    name:'4season',
+                    price:'150'
+                },
+                {
+                    name:'5sesaon',
+                    price: '200'
+                }
+            ]
+            let imgs = [
+                {
+                    src: 'https://parade.com/.image/t_share/MTkwNTgxMzUwMjEwMjgzMzg4/star-wars-characters-grogu-baby-yoda.jpg',
+                    alt:""
+                },
+                {
+                    src: 'https://www.shortlist.com/media/imager/201910/40419-original.jpg',
+                },
+                {
+                    src: 'https://whatnerd.com/wp-content/uploads/2021/10/coolest-star-wars-characters-ahsoka-tano-featured.jpg',
+                },
+                // {
+                //     src: '../img/local.png',
+                // },
+            ];
+            let container = document.querySelector('.container');
+            let imgContainer = document.querySelector('.container>img');
+            let count = 0;
+            function slider (){
+                imgContainer.setAttribute('src', `${imgs[count].src}`);
+                count++;
+                if( count == imgs.length){count = 0}
+            }
+            slider();
+            setInterval(slider, 3000);
+            function callBack(){
+                alert('hello');
+            }
+            function makeAdd(fn){
+                fn();
+                // return function(y){
+                //     return x+y;
+                // }
+            }
+            let zerocall = makeAdd
+            let firstCall = makeAdd(5);
+            let secondCall = firstCall(10);
+            console.log(zerocall);
+            console.log(firstCall);
+            console.log(secondCall);
+        }
+    </script>
+    <style>
+        .container{
+            position: relative;
+            overflow: hidden;
+            width: 600px;
+            margin: 50px auto;
+        }
+        .container>img{
+            object-fit: contain;
+            width: 100%;
+            min-width: 600px;
+        }
+        .prev,
+        .next{
+            position: absolute;
+            top: 50%;
+            border: 1px solid red;
+            background-color: white;
+        }
+        .prev{
+            left: 10px;
+        }
+        .next{
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="" alt="slider-img">
+        <button class="prev">Back</button>
+        <button class="next">Next</button>
+    </div>
+</body>
+</html>

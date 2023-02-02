@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open('DELETE', "https://jsonplaceholder.typicode.com/post/1");
+        xhr.responseText ="json";  // text, xml , blob, arraybuffer
+        xhr.send();
+        xhr.onreadystatechange = function(){
+            if( xhr.readyState == 3){
+                alert('loading');
+            }
+            if(xhr.readyState == 4){
+                alert('Done');
+            }
+        }
+        // xhr.onload = function(){
+        //     if(xhr.status !=200){
+        //         console.log(`${xhr.statusText}`);
+        //     }
+        //     else{
+        //         let response = JSON.parse(xhr.response);
+        //         console.log(response);
+        //     }
+        // }
+        // xhr.onprogress = function(event){
+        //     if(event.lengthComputable){
+        //         console.log(`Received ${event.loaded} of ${event.total} bytes`);
+        //     }
+        //     else{
+        //         console.log(`Received ${event.loaded} bytes`);
+        //     }
+        //     xhr.onerror = function(){
+        //         console.log('request fail');
+        //     }
+        // }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
