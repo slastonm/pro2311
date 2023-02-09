@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const post = [
+            {id:1, text:'Hello'},
+            {id:2, text:'World'}
+        ];
+        function getData(){
+            setTimeout(()=>{
+                let dataItem = '';
+                post.forEach((post)=>{
+                    dataItem +=`<p>${post.text}</p>`;
+                })
+                document.body.innerHTML = dataItem;
+            }, 1000);
+        }
+        function createData(postItem){
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                   
+                    const error = false;
+                    if(!error){
+                        post.push(postItem);
+                        resolve();
+                    }
+                    else{
+                        reject(
+                            'Error inside Promise 1111'
+                        );
+                    }
+                }, 2000);
+            })
+        }
+        async function start(){
+            await createData({id:3, text:'JS'});
+
+            getData();
+
+        }
+        start();
+
+        async function fetchData(){
+            // fetch('https://jsonplaceholder.typicode.com/todos/1')
+            // .then(response => response.json())
+            // .then(json => console.log(json))
+            let res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+            let data = await res.json();
+            console.log(data);
+        }
+        fetchData();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

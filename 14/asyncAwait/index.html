@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const post = [
+            {id:1, text:'Hello'},
+            {id:2, text:'World'}
+        ];
+        function getData(){
+            setTimeout(()=>{
+                let dataItem = '';
+                post.forEach((post)=>{
+                    dataItem +=`<p>${post.text}</p>`;
+                })
+                document.body.innerHTML = dataItem;
+            }, 1000);
+        }
+        function createData(postItem, callBackFn){
+            setTimeout(()=>{
+                post.push(postItem);
+                callBackFn();
+            }, 2000);
+        }
+        getData();
+        createData({id:3, text:'JS'}, getData)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

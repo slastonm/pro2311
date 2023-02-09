@@ -1,0 +1,7 @@
+node_modules/
+# Logs
+logs
+*.log
+# Optional eslint cache
+.eslintcache
+

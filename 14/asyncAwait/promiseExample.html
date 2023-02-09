@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+                const post = [
+            {id:1, text:'Hello'},
+            {id:2, text:'World'}
+        ];
+        function getData(){
+            setTimeout(()=>{
+                let dataItem = '';
+                post.forEach((post)=>{
+                    dataItem +=`<p>${post.text}</p>`;
+                })
+                document.body.innerHTML = dataItem;
+            }, 1000);
+        }
+        function createData(postItem){
+            // setTimeout(()=>{
+            //     post.push(postItem);
+            //     callBackFn();
+            // }, 2000);
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                   
+                    const error = true;
+                    if(!error){
+                        post.push(postItem);
+                        resolve();
+                    }
+                    else{
+                        reject(
+                            'Error inside Promise 1111'
+                        );
+                    }
+                }, 2000);
+            })
+        }
+        createData({id:3, text:'JS'}).then(getData).catch(err=>console.log(err));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

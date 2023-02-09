@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // promise.then().then()
+        let firstP = new Promise(function(resolve){
+            resolve('First');
+        });
+        let secondP = firstP.then(function(value){
+            return `${value} and second promise value`
+        });
+        let thirdP = secondP.then(function(value){
+            return `${value} and third promise value`
+        });
+        thirdP.then(function(finalValue){
+            console.log(finalValue);
+        });
+
+        new Promise(resolve=> resolve("First1")).then(value=> `${value} and Second`).then(value=> `${value} and 3`).then(finalValue=> console.log(finalValue));
+
+        
+    </script>
+</head>
+
+<body>
+   
+</body>
+
+</html>

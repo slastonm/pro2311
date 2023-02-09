@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            let element = document.querySelector('p');
+            let title = $("h1>span");
+            console.log(title)
+
+            title.click(function () {
+                title.toggleClass("bounce");
+            });
+            $('div').click(function () {
+                $('div').slideDown("slow", function () {
+                    // Animation complete.
+                });
+            });
+            $( "h2" ).click(function() {
+                $( "div" ).slideUp( "slow", function() {
+                    // Animation complete.
+                });
+            });
+            $("h1").click(function () {
+                $("div").slideDown("slow", function () {
+                    // Animation complete.
+                });
+            });
+            $('button').click(function(){
+                $('.custom').slideUp( 500 ).delay( 1000 ).fadeIn( 400 );
+            });
+        })
+    </script>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            display: none;
+        }
+        .custom{
+            width: 300px;
+            height: 400px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        Hide
+    </h2>
+    <h1>
+        <span>
+            span inside
+        </span>
+        Hello
+
+    </h1>
+    <div></div>
+    <button>
+        Animation
+    </button>
+    <div class="custom"></div>
+</body>
+
+</html>
