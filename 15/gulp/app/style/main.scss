@@ -1,0 +1,16 @@
+$main-color:red;
+*{
+    margin: 0;
+    padding: 0;
+    background-color: $main-color;
+    @media(max-width:768px){
+        margin: 10px;
+    }
+}
+body{
+    p{
+        @media(max-width:768px){
+            margin: 10px;
+        }
+    }
+}
