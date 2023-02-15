@@ -1,0 +1,10 @@
+$hello:yellow;
+body{
+    background: $hello;
+    h1,h2{
+        margin: 0;
+    }
+}
+
+// npm i --save-dev css-loader style-loader
+// npm i --save-dev sass-loader node-sass

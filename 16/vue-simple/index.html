@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .admin{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Vue
+    </h1>
+    <div id="app">
+        <h2>
+            {{message}}
+        </h2>
+        <p>
+            {{price}} - {{currency}}
+        </p>
+        <button v-on:click="price--">
+            Make sale
+        </button>
+        <button @click="price++">
+            Up price
+        </button>
+        <button @click="message='Chage work'">
+            Change message
+        </button>
+        <button @mouseover="handlerEvent">
+            Function Event
+        </button>
+        <button @click="changeMessage('Chage work 1111 !!!!')">
+            FUNCTION WITH VALUE
+        </button>
+        <hr>
+        <button @click="toggleShowInfo">
+            Swithc content
+        </button>
+        <div v-if="showInfo">
+            Switch value
+        </div>
+        <div v-else>
+            Else swith value
+        </div>
+        <!-- <div v-if="false">
+            Hello
+        </div> -->
+        <ul>
+            <li v-for="user in users">
+                {{user.name}} - {{user.age}}
+            </li>
+        </ul>
+        <a v-bind:href="link">
+            Course
+        </a>
+        <a :href="link">
+            Course 2
+        </a>
+        <!-- <img :src="src" alt=""> -->
+        <ul>
+            <li 
+                v-for="user in users" 
+                :class="{admin:user.isAdmin}"
+                @click="adminMode(user)">
+                {{user.name}} - {{user.age}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="user in justAdmin" class="admin">
+                {{user.name}} - {{user.isAdmin}}
+            </li>
+        </ul>
+    </div>
+   <script src="app.js"></script>
+</body>
+</html>
